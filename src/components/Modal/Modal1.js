@@ -29,7 +29,7 @@ const Modal1 = (props) => {
                     </div>
                     )
                     
-                }
+                
             </div>)
             
 }
