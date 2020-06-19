@@ -58,4 +58,21 @@ const modal = (props) => {
             )
 }
 
+class Modal extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        {if(this.props.description == true){
+            return(
+                <h1>descripcion</h1>
+            )
+        }else{
+            return(
+                <h1></h1>
+            )
+        }}
+    }
+}
+
 export default modal;
