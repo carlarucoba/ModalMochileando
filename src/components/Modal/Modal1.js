@@ -1,10 +1,19 @@
 import React from 'react';
+import MyMapComponent from './MyMapComponent';
 
 import './Modal.css';
 
 
 const Modal1 = (props) => {
 
+    //const handleSaveTravel = () => {
+        
+    //}
+
+    const FinalClosure=()=>{
+        props.primarymodal();
+        props.close();
+    }
         return (
             <div>
                 <div className="modal-wrapper"
@@ -14,12 +23,13 @@ const Modal1 = (props) => {
                         }}>
                     <div className="modal-header">
                         <h3>PASO 2 - Crear publicación</h3>
-                        <span className="close-modal-btn" onClick={props.close}>×</span>
+                        <span className="close-modal-btn" onClick={FinalClosure}>×</span>
                     </div>
                     <div className="modal-body">
                         <p>
                             {props.children}
-                            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+                            MAPA
+                            <MyMapComponent ></MyMapComponent>
                         </p>
                     </div>
                     <div className="modal-footer">
