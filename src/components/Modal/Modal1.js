@@ -19,7 +19,7 @@ const Modal1 = (props) => {
                     <div className="modal-body">
                         <p>
                             {props.children}
-                            Hola
+                            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
                         </p>
                     </div>
                     <div className="modal-footer">
