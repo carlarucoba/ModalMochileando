@@ -1,5 +1,5 @@
 import React from 'react';
-import MyMapComponent from './MyMapComponent';
+import Map from './MyMapComponent';
 
 import './Modal.css';
 
@@ -29,7 +29,7 @@ const Modal1 = (props) => {
                         <p>
                             {props.children}
                             MAPA
-                            <MyMapComponent ></MyMapComponent>
+                            <Map ></Map>
                         </p>
                     </div>
                     <div className="modal-footer">
