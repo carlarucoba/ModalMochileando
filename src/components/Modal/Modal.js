@@ -6,7 +6,20 @@ import Modal1 from './Modal1';
 
 const Modal = ({show,close}) => {
 
-    const [foto,setfoto] = useState(false);
+    const [foto,setfoto] = useState(false); 
+    const [titulo, settitulo] = useState("");
+    const [descripcion, setdescripcion] = useState("");
+    const [tipoviaje, settipoviaje] = useState("");
+    const [imagenes, setimagenes] = useState([]);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const {titulo, descripcion, tipoviaje, imagenes} = e.target.elements;
+        settitulo(titulo.value);
+        setdescripcion(descripcion.value);
+        settipoviaje(tipoviaje.value);
+        setimagenes(imagenes.value);
+    }
 
     const closeModalHandler = () => {
         setfoto(false);
@@ -28,7 +41,7 @@ const Modal = ({show,close}) => {
                                 </div>
                                 <div className="modal-body">
                                     
-                                    <form>
+                                    <form onSubmit={handleSubmit}>
                                         <h1>Publicación de tu viaje</h1>
                                         <label>¿Cómo llamarás a tu viaje?: </label><br/>
                                         <input
@@ -50,6 +63,10 @@ const Modal = ({show,close}) => {
                                             type="file"
                                             name="imagenes"
                                             placeholder="Imágenes" multiple/><br/>
+                                        <input 
+                                            type= "submit"
+                                            value="Siguiente"
+                                        />
                                     </form>
                                 </div>
                                 <div className="modal-footer">
@@ -63,7 +80,12 @@ const Modal = ({show,close}) => {
                             <Modal1
                                 className="modal1"
                                 show={foto}
-                                close={closeModalHandler}> 
+                                close={closeModalHandler}
+                                primarymodal={close}
+                                titulo={titulo}
+                                descripcion={descripcion}
+                                tipoviaje={tipoviaje}
+                                imagenes={imagenes}> 
                             </Modal1>
                         )
                     }
