@@ -1,4 +1,5 @@
 import React from 'react';
+import './Modal.css';
 
 
 
@@ -6,7 +7,7 @@ const Modal2 = (props) => {
 
         return (
             <div>
-                        <div className="modal-wrapper"
+                        <div className="modal-popito"
                         style={{
                             transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
                             opacity: props.show ? '1' : '0'
@@ -18,8 +19,8 @@ const Modal2 = (props) => {
                             </p>
                         </div>
                         <div className="modal-footer">
-                            <button className="btn-cancel" onClick={props.close}>ATRÁS</button>
-                            <button className="btn-continue">ACEPTAR</button>
+                            <button className="btn-aceptar" onClick={props.close}>ACEPTAR</button>
+                            <button className="btn-cancel">CANCELAR</button>
                         </div>
                     </div>
                     )
@@ -29,4 +30,4 @@ const Modal2 = (props) => {
             
 }
 
-export default Modal1;
+export default Modal2;
