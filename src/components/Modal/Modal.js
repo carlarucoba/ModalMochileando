@@ -23,7 +23,7 @@ const Modal = ({show,close}) => {
                                     opacity: show ? '1' : '0'
                                     }}>
                                 <div className="modal-header">
-                                    <h3>Crear publicación</h3>
+                                    <h3>PASO 1 - Crear publicación</h3>
                                     <span className="close-modal-btn" onClick={close}>×</span>
                                 </div>
                                 <div className="modal-body">
@@ -47,9 +47,9 @@ const Modal = ({show,close}) => {
                                         </select><br/>
                                         <label>¿Quieres incluir imágenes?: </label><br/>
                                         <input
-                                            type="text"
+                                            type="file"
                                             name="imagenes"
-                                            placeholder="Imágenes"/><br/>
+                                            placeholder="Imágenes" multiple/><br/>
                                     </form>
                                 </div>
                                 <div className="modal-footer">
