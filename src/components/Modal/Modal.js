@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 
 import './Modal.css';
 import Modal1 from './Modal1';
@@ -10,7 +10,7 @@ const Modal = ({show,close}) => {
     const [titulo, settitulo] = useState("");
     const [descripcion, setdescripcion] = useState("");
     const [tipoviaje, settipoviaje] = useState("");
-    const [imagenes, setimagenes] = useState([]);
+    const [imagenes, setimagenes] = useState([""]);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -19,6 +19,7 @@ const Modal = ({show,close}) => {
         setdescripcion(descripcion.value);
         settipoviaje(tipoviaje.value);
         setimagenes(imagenes.value);
+        setfoto(true);
     }
 
     const closeModalHandler = () => {
@@ -26,7 +27,6 @@ const Modal = ({show,close}) => {
     }
 
         return (
-
             <div>
                     {
                         foto===false ? (
@@ -63,15 +63,18 @@ const Modal = ({show,close}) => {
                                             type="file"
                                             name="imagenes"
                                             placeholder="Imágenes" multiple/><br/>
+                                        <button 
+                                        className="btn-cancel" 
+                                        onClick={close}>CERRAR</button>
                                         <input 
-                                            type= "submit"
-                                            value="Siguiente"
-                                        />
+                                            type="submit" 
+                                            value="SIGUIENTE" 
+                                            className="btn-continue" 
+                                            />
                                     </form>
                                 </div>
                                 <div className="modal-footer">
-                                    <button className="btn-cancel" onClick={close}>CERRAR</button>
-                                    <button className="btn-continue" onClick={()=> setfoto(true)}>SIGUIENTE</button>
+                                    
                                     
                                 </div>
                             </div>
@@ -89,27 +92,10 @@ const Modal = ({show,close}) => {
                             </Modal1>
                         )
                     }
-                        
-                    
+                                          
             </div>
+
             )
 }
-
-/*class Modal extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        {if(this.props.description == true){
-            return(
-                <h1>descripcion</h1>
-            )
-        }else{
-            return(
-                <h1></h1>
-            )
-        }}
-    }
-}*/
 
 export default Modal;

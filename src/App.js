@@ -3,6 +3,7 @@ import React, { Component, useContext } from 'react';
 //import './App.css';
 import Modal from './components/Modal/Modal';
 
+
 class App extends Component {
 
     constructor() {
@@ -42,20 +43,6 @@ class App extends Component {
     }
 }
 
-/*const Modal = () => {
-    {usuario} = useContext(Auth);
-}*/
 
-/*const handleCreatePublication = async e => {
-    e.preventDefault();
-    const {titulo, desc, x} = e.target.elements;
-    await app
-    .firestore()
-    .collection("publicaciones").doc(usuario.uid).set({
-        titulo: titulo.value,
-        desc: desc.value,
-        x: x.value,
-    })
-}*/
 
 export default App;
