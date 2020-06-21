@@ -38,7 +38,7 @@ export default function Map() {
 
                 var flightPath = new window.google.maps.Polyline({
                     path: window.points,
-                    geodesic: true,
+                    geodesic: false,
                     strokeColor: "#FF0000",
                     strokeOpacity: 1.0,
                     strokeWeight: 2,
@@ -47,7 +47,7 @@ export default function Map() {
                 flightPath.setMap(window.map);
             });
 
-            function placeMarker(location: any) {
+            function placeMarker(location) {
                 new window.google.maps.Marker({
                     position: location,
                     map: window.map,
